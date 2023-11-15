@@ -74,7 +74,7 @@ class _Home02State extends State<Home02> {
               ),
               body: Container(
                 child: isLoading
-                    ? CenteredCircularProgress(message: 'Carregando Agenda\nCaso demore mais que 3 segundos\nverifique sua internet',)
+                    ? CenteredCircularProgress(message: 'Carregando Agenda\nCaso demore mais que 3 segundos\nverifique sua conexao de internet',)
                     : ListView.builder(
                         itemCount: feedbacks.length,
                         itemBuilder: (context, index) {
