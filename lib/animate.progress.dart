@@ -35,7 +35,7 @@ class CenteredCircularProgress extends StatelessWidget {
           Container(
             height: loadingSize,
             width: loadingSize,
-            child: const SpinKitCubeGrid(
+            child: const SpinKitCircle(
               color: Colors.white,
               size: 130,
             ),

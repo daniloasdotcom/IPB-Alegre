@@ -1,9 +1,7 @@
-import 'package:app_igreja/agenda.dart';
-import 'package:app_igreja/escola.dominical.dart';
+
 import 'package:app_igreja/home.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert' as convert;
+
 
 class Precisase extends StatefulWidget {
   @override

@@ -1,10 +1,8 @@
-import 'dart:ffi';
 import 'package:app_igreja/animate.progress.dart';
 import 'package:app_igreja/home.dart';
 import 'package:app_igreja/itens.agenda.dart';
 import 'package:easy_rich_text/easy_rich_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
 
@@ -88,7 +86,7 @@ class _AgendaEscolaDominicalState extends State<AgendaEscolaDominical> {
               ),
               body: Container(
                 child: isLoading
-                    ? CenteredCircularProgress(message: 'Carregando Agenda\nCaso demore mais que 3 segundos\nverifique sua conexao de internet',)
+                    ? CenteredCircularProgress(message: 'Carregando Agenda\nCaso demore mais que 5 segundos\nverifique sua conexao de internet',)
                     : ListView.builder(
                         itemCount: feedbacks.length,
                         itemBuilder: (context, index) {

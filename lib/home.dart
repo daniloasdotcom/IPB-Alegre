@@ -28,8 +28,29 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
+    _checkAndRequestNotificationPermission();
     setState(() => isLoading = true);
     _scheduleDailyNotification();
+  }
+
+  Future<void> _checkAndRequestNotificationPermission() async {
+    var androidSettings = await flutterLocalNotificationsPlugin
+        .resolvePlatformSpecificImplementation<
+            AndroidFlutterLocalNotificationsPlugin>()
+        ?.getNotificationAppLaunchDetails();
+
+    if (androidSettings == null || !androidSettings.didNotificationLaunchApp) {
+      var areNotificationsEnabled =
+          await flutterLocalNotificationsPlugin
+              .resolvePlatformSpecificImplementation<
+                  AndroidFlutterLocalNotificationsPlugin>()
+              ?.areNotificationsEnabled();
+
+      if (areNotificationsEnabled == false) {
+        // Notificações desativadas, solicite ao usuário para ativá-las
+        print("Notificações desativadas. O aplicativo pode não funcionar corretamente.");
+      }
+    }
   }
 
   _getFeedbackFromSheet() async {
@@ -59,7 +80,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   Future<void> _scheduleDailyNotification() async {
-    var time = Time(14, 24, 0); // Defina o horário desejado para a notificação diária
+    var time = Time(6, 0, 0); // Defina o horário desejado para a notificação diária
     var androidPlatformChannelSpecifics = AndroidNotificationDetails(
       'daily_notification',
       'Daily Notification',
@@ -71,6 +92,7 @@ class _HomePageState extends State<HomePage> {
         android: androidPlatformChannelSpecifics,
         iOS: iOSPlatformChannelSpecifics);
 
+    // ignore: deprecated_member_use
     await flutterLocalNotificationsPlugin.showDailyAtTime(
       0,
       'Bom dia! Já verificou a agenda da igreja hoje?',
@@ -280,7 +302,7 @@ class _HomePageState extends State<HomePage> {
                         padding: EdgeInsets.only(left: 20, right: 20),
                         alignment: Alignment.center,
                         child: isLoading
-                            ? CenteredCircularProgress(message: 'Carregando Recados\nCaso demore mais que 3 segundos\nverifique sua conexão de internet',)
+                            ? CenteredCircularProgress(message: 'Carregando Recados\nCaso demore mais que 5 segundos\nverifique sua conexão de internet',)
                             : Column(
                                 children: [
                                   RecadosEspeciaisLista(

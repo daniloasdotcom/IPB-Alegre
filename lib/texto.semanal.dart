@@ -104,7 +104,7 @@ class _TextoSemanalPageState extends State<TextoSemanalPage> {
               ),
               body: Container(
                 child: isLoading
-                    ? CenteredCircularProgress(message: 'Carregando Texto\nCaso demore mais que 3 segundos\nverifique sua conexao de internet',)
+                    ? CenteredCircularProgress(message: 'Carregando Texto\nCaso demore mais que 5 segundos\nverifique sua conexao de internet',)
                     : TextoSemanalFormato(
                         textosemanal: textosemanal[0].textosemanal,
                         titulo: textosemanal[0].titulo,
