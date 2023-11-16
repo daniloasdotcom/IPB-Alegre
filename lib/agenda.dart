@@ -5,11 +5,17 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
 
+// Este trecho de código é a declaração da clase 'Home02', que é um StatefulWidget.
+// Isto significa que esta classe pode ter um estado mutável
 class Home02 extends StatefulWidget {
   @override
   _Home02State createState() => _Home02State();
 }
 
+// Aqui, estamos definindo o estado para a classe Home02. 
+// Feedbacks é uma lista que conterá objetos do tipo FeedbackModel.
+// isLoading é uma variável que indica se os dados estão sendo carregados.
+// O método initState é chamado quando o estado é inicializado, e nele, estamos definindo isLoading como true
 class _Home02State extends State<Home02> {
   List<FeedbackModel> feedbacks = <FeedbackModel>[];
 
@@ -21,6 +27,7 @@ class _Home02State extends State<Home02> {
     setState(() => isLoading = true);
   }
 
+  // Aqui, temos o método _getFeedbackFromSheet(). Ele faz uma requisição HTTP para obter dados de uma planilha do Google. Os dados são convertidos de JSON e usados para preencher objetos FeedbackModel que são adicionados à lista feedbacks. O await Future.delayed simula um atraso de 2000 milissegundos (2 segundos), e então isLoading é definido como false, indicando que os dados foram carregados.
   _getFeedbackFromSheet() async {
     var raw = await http.get(Uri.parse(
         "https://script.google.com/macros/s/AKfycbx0iN9uGqg3t3C-ht1vh7c8dAe9PXwfSvLBr6uJEuWJs6P24jnJN8_Grc1zLrMtEV-B/exec"));
@@ -72,7 +79,10 @@ class _Home02State extends State<Home02> {
               ),
               body: Container(
                 child: isLoading
-                    ? CenteredCircularProgress(message: 'Carregando Agenda\nCaso demore mais que 5 segundos\nverifique sua conexao de internet',)
+                    ? CenteredCircularProgress(
+                        message:
+                            'Carregando Agenda\nCaso demore mais que 5 segundos\nverifique sua conexão de internet',
+                      )
                     : ListView.builder(
                         itemCount: feedbacks.length,
                         itemBuilder: (context, index) {

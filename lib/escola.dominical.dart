@@ -86,7 +86,7 @@ class _AgendaEscolaDominicalState extends State<AgendaEscolaDominical> {
               ),
               body: Container(
                 child: isLoading
-                    ? CenteredCircularProgress(message: 'Carregando Agenda\nCaso demore mais que 5 segundos\nverifique sua conexao de internet',)
+                    ? CenteredCircularProgress(message: 'Carregando Agenda\nCaso demore mais que 5 segundos\nverifique sua conexão de internet',)
                     : ListView.builder(
                         itemCount: feedbacks.length,
                         itemBuilder: (context, index) {
