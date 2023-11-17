@@ -76,7 +76,7 @@ class _TextoSemanalPageState extends State<TextoSemanalPage> {
         return DefaultTabController(
             length: 2,
             child: Scaffold(
-              backgroundColor: const Color(0xFF334F53),
+              backgroundColor: Colors.white,
               appBar: AppBar(
                 centerTitle: true,
                 backgroundColor: const Color(0xFF45936C),
@@ -238,6 +238,7 @@ class _TextoSemanalFormatoState extends State<TextoSemanalFormato> {
                   Visibility(
                     visible: widget.paragrafo04 != 'nada',
                     child: Container(
+                      padding: EdgeInsets.only(top: 10, bottom: 10),
                       child: Text(
                         widget.paragrafo04,
                         textAlign: TextAlign.justify,
@@ -252,6 +253,8 @@ class _TextoSemanalFormatoState extends State<TextoSemanalFormato> {
                   Visibility(
                     visible: widget.paragrafo05 != 'nada',
                     child: Container(
+                      alignment: Alignment.bottomLeft,
+                      padding: EdgeInsets.only(top: 10, bottom: 10),
                       child: Text(
                         widget.paragrafo05,
                         textAlign: TextAlign.justify,
@@ -266,6 +269,8 @@ class _TextoSemanalFormatoState extends State<TextoSemanalFormato> {
                   Visibility(
                     visible: widget.paragrafo06 != 'nada',
                     child: Container(
+                      alignment: Alignment.bottomLeft,
+                      padding: EdgeInsets.only(top: 10, bottom: 10),
                       child: Text(
                         widget.paragrafo06,
                         textAlign: TextAlign.justify,
@@ -280,6 +285,8 @@ class _TextoSemanalFormatoState extends State<TextoSemanalFormato> {
                   Visibility(
                     visible: widget.paragrafo07 != 'nada',
                     child: Container(
+                      alignment: Alignment.bottomLeft,
+                      padding: EdgeInsets.only(top: 10, bottom: 10),
                       child: Text(
                         widget.paragrafo07,
                         textAlign: TextAlign.justify,
@@ -294,6 +301,8 @@ class _TextoSemanalFormatoState extends State<TextoSemanalFormato> {
                   Visibility(
                     visible: widget.paragrafo08 != 'nada',
                     child: Container(
+                      alignment: Alignment.bottomLeft,
+                      padding: EdgeInsets.only(top: 10, bottom: 10),
                       child: Text(
                         widget.paragrafo08,
                         textAlign: TextAlign.justify,
@@ -308,6 +317,8 @@ class _TextoSemanalFormatoState extends State<TextoSemanalFormato> {
                   Visibility(
                     visible: widget.paragrafo09 != 'nada',
                     child: Container(
+                      alignment: Alignment.bottomLeft,
+                      padding: EdgeInsets.only(top: 10, bottom: 10),
                       child: Text(
                         widget.paragrafo09,
                         textAlign: TextAlign.justify,
@@ -322,6 +333,8 @@ class _TextoSemanalFormatoState extends State<TextoSemanalFormato> {
                   Visibility(
                     visible: widget.paragrafo10 != 'nada',
                     child: Container(
+                      alignment: Alignment.bottomLeft,
+                      padding: EdgeInsets.only(top: 10, bottom: 10),
                       child: Text(
                         widget.paragrafo10,
                         textAlign: TextAlign.justify,
