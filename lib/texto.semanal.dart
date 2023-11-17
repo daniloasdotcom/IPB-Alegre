@@ -1,4 +1,5 @@
 import 'package:app_igreja/animate.progress.dart';
+import 'package:app_igreja/animate.progress.green.dart';
 import 'package:app_igreja/home.dart';
 import 'package:app_igreja/itens.texto.semanal.dart';
 import 'package:flutter/material.dart';
@@ -104,7 +105,7 @@ class _TextoSemanalPageState extends State<TextoSemanalPage> {
               ),
               body: Container(
                 child: isLoading
-                    ? CenteredCircularProgress(message: 'Carregando Texto\nCaso demore mais que 5 segundos\nverifique sua conexão de internet',)
+                    ? CenteredCircularProgressGreen(message: 'Carregando Texto\nCaso demore mais que 5 segundos\nverifique sua conexão de internet',)
                     : TextoSemanalFormato(
                         textosemanal: textosemanal[0].textosemanal,
                         titulo: textosemanal[0].titulo,

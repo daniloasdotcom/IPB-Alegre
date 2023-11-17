@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 
-class CenteredCircularProgress extends StatelessWidget {
+class CenteredCircularProgressGreen extends StatelessWidget {
   final String message;
   final double loadingSize;
   final double fontSize;
 
-  CenteredCircularProgress({
+  CenteredCircularProgressGreen({
     required this.message,
     this.loadingSize = 130.0,
     this.fontSize = 14.0,
@@ -28,7 +28,7 @@ class CenteredCircularProgress extends StatelessWidget {
                   fontSize: fontSize,
                   fontWeight: FontWeight.bold,
                   fontStyle: FontStyle.italic,
-                  color: Colors.white),
+                  color: Colors.green),
             ),
           ),
           SizedBox(height: 20,),
@@ -36,7 +36,7 @@ class CenteredCircularProgress extends StatelessWidget {
             height: loadingSize,
             width: loadingSize,
             child: const SpinKitCircle(
-              color: Colors.white,
+              color: Colors.green,
               size: 130,
             ),
           ),
