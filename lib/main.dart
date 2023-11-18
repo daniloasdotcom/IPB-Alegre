@@ -1,5 +1,6 @@
 
 import 'package:app_igreja/home.dart';
+import 'package:app_igreja/introduction.screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
+      home: IntroductionScreenPage(),
     );
   }
 }

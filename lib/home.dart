@@ -275,7 +275,7 @@ class _HomePageState extends State<HomePage> {
                             width: 20,
                           ),
                           Text(
-                            'Recados Especiais',
+                            'Mural de Recados',
                             style: TextStyle(
                                 fontFamily: 'Merriweather',
                                 fontSize: 18,
