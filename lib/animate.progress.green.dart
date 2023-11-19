@@ -31,7 +31,9 @@ class CenteredCircularProgressGreen extends StatelessWidget {
                   color: Colors.green),
             ),
           ),
-          SizedBox(height: 20,),
+          SizedBox(
+            height: 20,
+          ),
           Container(
             height: loadingSize,
             width: loadingSize,
@@ -40,10 +42,8 @@ class CenteredCircularProgressGreen extends StatelessWidget {
               size: 130,
             ),
           ),
-          
         ],
       ),
     );
   }
 }
-

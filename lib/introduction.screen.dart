@@ -84,17 +84,17 @@ class IntroductionScreenPage extends StatelessWidget {
           bodyWidget: Column(
             children: [
               Container(
-                margin: const EdgeInsets.fromLTRB(100, 20, 100, 0),
-                width: 120, // Ajuste a largura desejada
-                height: 120, // Ajuste a altura desejada
+                margin: const EdgeInsets.fromLTRB(10, 20, 10, 0),
+                width: 250, // Ajuste a largura desejada
+                height: 250, // Ajuste a altura desejada
                 alignment: Alignment.center,
                 child: ClipRRect(
                   borderRadius: const BorderRadius.all(Radius.circular(90)),
                   child: Image.asset(
-                    'assets/images/logoIgreja.jpg',
+                    'assets/images/pic02.png',
                     fit: BoxFit.cover,
-                    width: 120, // Ajuste a largura desejada
-                    height: 120, // Ajuste a altura desejada
+                    width: 250, // Ajuste a largura desejada
+                    height: 250, // Ajuste a altura desejada
                   ),
                 ),
                 decoration: BoxDecoration(
@@ -107,34 +107,15 @@ class IntroductionScreenPage extends StatelessWidget {
                 ),
               ),
               Container(
-                margin: const EdgeInsets.only(left: 40, right: 40, top: 0),
-                child: Text(
-                  "IPB Alegre",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 24,
-                    fontFamily: 'Merriweather',
-                  ),
-                ),
-              ),
-              Container(
                 margin: const EdgeInsets.only(
                     left: 40, right: 40, top: 50, bottom: 50),
                 child: Column(children: [
                   Text(
-                    "Clicando no botão Agenda Semanal",
+                    "No Aplicativo IBP Alegre você fica por dentro da Agenda de Atividades da Igreja",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.black,
-                      fontSize: 14,
-                      fontFamily: 'Merriweather',
-                    ),
-                  ),
-                  Text(
-                    "você fica por dentro das nossas atividades",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Colors.black,
+                      height: 1.5,
                       fontSize: 14,
                       fontFamily: 'Merriweather',
                     ),
@@ -142,21 +123,23 @@ class IntroductionScreenPage extends StatelessWidget {
                 ]),
               ),
               Container(
+                padding: const EdgeInsets.fromLTRB(40, 5, 40, 5),
                 margin: const EdgeInsets.only(left: 40, right: 40, top: 5),
                 decoration: BoxDecoration(
                   color: const Color(0xFF45936C),
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: TextButton.icon(
-                  onPressed: () {},
-                  icon: const Icon(Icons.calendar_today_outlined,
-                      color: Colors.white),
+                  onPressed: () {
+                    _navigateToHomePage(context);
+                  },
+                  icon: const Icon(Icons.home, color: Colors.white),
                   style: TextButton.styleFrom(
                     alignment: Alignment.centerLeft,
                     minimumSize: const Size(100, 50),
                   ),
                   label: const Text(
-                    "Agenda da Semana",
+                    "Começar!",
                     style: TextStyle(
                         fontFamily: 'Merriweather',
                         fontSize: 12,
@@ -181,17 +164,17 @@ class IntroductionScreenPage extends StatelessWidget {
           bodyWidget: Column(
             children: [
               Container(
-                margin: const EdgeInsets.fromLTRB(60, 20, 60, 0),
-                width: 80, // Ajuste a largura desejada
-                height: 80, // Ajuste a altura desejada
+                margin: const EdgeInsets.fromLTRB(10, 20, 10, 0),
+                width: 250, // Ajuste a largura desejada
+                height: 250, // Ajuste a altura desejada
                 alignment: Alignment.center,
                 child: ClipRRect(
                   borderRadius: const BorderRadius.all(Radius.circular(90)),
                   child: Image.asset(
-                    'assets/images/logoIgreja.jpg',
+                    'assets/images/pic03.png',
                     fit: BoxFit.cover,
-                    width: 120, // Ajuste a largura desejada
-                    height: 120, // Ajuste a altura desejada
+                    width: 250, // Ajuste a largura desejada
+                    height: 250, // Ajuste a altura desejada
                   ),
                 ),
                 decoration: BoxDecoration(
@@ -205,42 +188,14 @@ class IntroductionScreenPage extends StatelessWidget {
               ),
               Container(
                 margin: const EdgeInsets.only(
-                    left: 40, right: 40, top: 0, bottom: 60),
-                child: Text(
-                  "IPB Alegre",
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 14,
-                    fontFamily: 'Merriweather',
-                  ),
-                ),
-              ),
-              Container(
-                margin: const EdgeInsets.only(left: 40, right: 40, top: 0),
-                child: const Icon(
-                  FontAwesomeIcons.bookReader,
-                  color: Colors.black,
-                  size: 60,
-                ),
-              ),
-              Container(
-                margin: const EdgeInsets.only(
                     left: 40, right: 40, top: 50, bottom: 50),
                 child: Column(children: [
                   Text(
-                    "Toda semana um texto especial",
+                    "Toda semana você encontra aqui um texto especial",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.black,
-                      fontSize: 14,
-                      fontFamily: 'Merriweather',
-                    ),
-                  ),
-                  Text(
-                    "para nossa reflexao biblica",
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: Colors.black,
+                      height: 1.5,
                       fontSize: 14,
                       fontFamily: 'Merriweather',
                     ),
@@ -248,20 +203,23 @@ class IntroductionScreenPage extends StatelessWidget {
                 ]),
               ),
               Container(
+                padding: const EdgeInsets.fromLTRB(40, 5, 40, 5),
                 margin: const EdgeInsets.only(left: 40, right: 40, top: 5),
                 decoration: BoxDecoration(
                   color: const Color(0xFF45936C),
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: TextButton.icon(
-                  onPressed: () {},
-                  icon: const Icon(FontAwesomeIcons.bible, color: Colors.white),
+                  onPressed: () {
+                    _navigateToHomePage(context);
+                  },
+                  icon: const Icon(Icons.home, color: Colors.white),
                   style: TextButton.styleFrom(
                     alignment: Alignment.centerLeft,
                     minimumSize: const Size(100, 50),
                   ),
                   label: const Text(
-                    "Palavras da semana",
+                    "Começar!",
                     style: TextStyle(
                         fontFamily: 'Merriweather',
                         fontSize: 12,
@@ -295,7 +253,7 @@ class IntroductionScreenPage extends StatelessWidget {
         style: TextStyle(color: Colors.white, fontFamily: 'Merriweather'),
       ),
       dotsContainerDecorator: const ShapeDecoration(
-          color: Color(0xFF45936C),
+          color: Color(0xFF334F53),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(0)),
           )),
@@ -323,7 +281,7 @@ class IntroductionScreenPage extends StatelessWidget {
     Navigator.of(context).pushReplacement(
       PageRouteBuilder(
         pageBuilder: (context, animation, secondaryAnimation) => HomePage(),
-        transitionDuration: Duration(milliseconds: 1500), 
+        transitionDuration: Duration(milliseconds: 1500),
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
           const begin = Offset(0.0, 1.0);
           const end = Offset.zero;
