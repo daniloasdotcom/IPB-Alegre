@@ -12,7 +12,7 @@ class Home02 extends StatefulWidget {
   _Home02State createState() => _Home02State();
 }
 
-// Aqui, estamos definindo o estado para a classe Home02. 
+// Aqui, estamos definindo o estado para a classe Home02.
 // Feedbacks é uma lista que conterá objetos do tipo FeedbackModel.
 // isLoading é uma variável que indica se os dados estão sendo carregados.
 // O método initState é chamado quando o estado é inicializado, e nele, estamos definindo isLoading como true
@@ -122,39 +122,37 @@ class _FeedbackTileState extends State<FeedbackTile> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Row(
-            children: [
-              SizedBox(
-                  height: 60,
-                  width: 60,
-                  child: ClipRRect(
-                      borderRadius: const BorderRadius.all(Radius.circular(40)),
-                      child: Image.network(widget.profilePic))),
-              const SizedBox(width: 16),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    width: 200,
-                    child: Text(widget.name,
-                        style: const TextStyle(
-                            fontFamily: 'Merriweather',
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white)),
-                  ),
-                  const SizedBox(height: 16),
-                  Text(
-                    widget.source,
-                    style: const TextStyle(
-                        fontFamily: 'Merriweather',
-                        fontSize: 15,
-                        color: Colors.white),
-                  )
-                ],
-              )
-            ],
-          ),
+          Row(children: [
+            SizedBox(
+                height: 60,
+                width: 60,
+                child: ClipRRect(
+                    borderRadius: const BorderRadius.all(Radius.circular(40)),
+                    child: Image.network(widget.profilePic))),
+            const SizedBox(width: 16),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  width: 200,
+                  child: Text(widget.name,
+                      style: const TextStyle(
+                          fontFamily: 'Merriweather',
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white)),
+                ),
+                const SizedBox(height: 16),
+                Text(
+                  widget.source,
+                  style: const TextStyle(
+                      fontFamily: 'Merriweather',
+                      fontSize: 15,
+                      color: Colors.white),
+                )
+              ],
+            ),
+          ]),
           const SizedBox(height: 16),
           EasyRichText('Evento: ' + widget.feedback,
               defaultStyle: const TextStyle(
