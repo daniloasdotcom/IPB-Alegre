@@ -111,7 +111,7 @@ class IntroductionScreenPage extends StatelessWidget {
                     left: 40, right: 40, top: 50, bottom: 50),
                 child: Column(children: [
                   Text(
-                    "No Aplicativo IBP Alegre você fica por dentro da Agenda de Atividades da Igreja",
+                    "No Aplicativo IPB Alegre você fica por dentro da Agenda de Atividades da Igreja",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.black,
