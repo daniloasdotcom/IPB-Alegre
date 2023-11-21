@@ -2,8 +2,22 @@ import 'package:app_igreja/home.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:introduction_screen/introduction_screen.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-class IntroductionScreenPage extends StatelessWidget {
+class IntroductionScreenPage extends StatefulWidget {
+  @override
+  State<IntroductionScreenPage> createState() => _IntroductionScreenPageState();
+}
+
+class _IntroductionScreenPageState extends State<IntroductionScreenPage> {
+  int _currentPage = 0;
+  bool _shouldSkipIntro = false;
+
+  Future<void> _setSkipIntro() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('skipIntro', true);
+  }
+
   List<PageViewModel> getPages(BuildContext context) {
     return [
       PageViewModel(
@@ -164,7 +178,7 @@ class IntroductionScreenPage extends StatelessWidget {
           bodyWidget: Column(
             children: [
               Container(
-                margin: const EdgeInsets.fromLTRB(10, 20, 10, 0),
+                margin: const EdgeInsets.fromLTRB(10, 10, 10, 0),
                 width: 250, // Ajuste a largura desejada
                 height: 250, // Ajuste a altura desejada
                 alignment: Alignment.center,
@@ -188,10 +202,10 @@ class IntroductionScreenPage extends StatelessWidget {
               ),
               Container(
                 margin: const EdgeInsets.only(
-                    left: 40, right: 40, top: 50, bottom: 50),
+                    left: 40, right: 40, top: 30, bottom: 30),
                 child: Column(children: [
                   Text(
-                    "Toda semana você encontra aqui um texto especial",
+                    "Toda semana você encontra aqui, também, um texto especial",
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       color: Colors.black,
@@ -224,6 +238,42 @@ class IntroductionScreenPage extends StatelessWidget {
                         fontFamily: 'Merriweather',
                         fontSize: 12,
                         color: Colors.white),
+                    textAlign: TextAlign.left,
+                  ),
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.fromLTRB(40, 5, 40, 5),
+                margin: const EdgeInsets.only(left: 40, right: 40, top: 10),
+                decoration: BoxDecoration(
+                  
+                  borderRadius: BorderRadius.circular(10),
+                  
+                ),
+                child: TextButton.icon(
+                  onPressed: () async {
+                    await _setSkipIntro();
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (context) => HomePage(),
+                      ),
+                    );
+                  },
+                  icon: const Icon(FontAwesomeIcons.eyeSlash, color: Colors.black),
+                  style: TextButton.styleFrom(
+                    alignment: Alignment.centerLeft,
+                    minimumSize: const Size(100, 50),
+                  ),
+                  label: const Text(
+                    "Não quero ver mais",
+                    style: TextStyle(
+                        fontFamily: 'Merriweather',
+                        fontSize: 12,
+                        decoration: TextDecoration.underline,
+                        decorationColor: Colors.black, 
+                        fontStyle: FontStyle.italic,
+                        decorationStyle: TextDecorationStyle.solid,
+                        color: Colors.black),
                     textAlign: TextAlign.left,
                   ),
                 ),
